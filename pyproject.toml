@@ -1,0 +1,35 @@
+[project]
+name = "pytaxi"
+version = "0.0.1-alpha.1"
+authors = [
+	{ name = "Alexandr G.", email = "official.oxygen.1771@gmail.com" },
+]
+description = "A Taxi app for a data science project at ITMO."
+requires-python = ">=3.13"
+license = "GPL-3.0-or-later"
+license-files = [
+	"LICENSE*"
+]
+
+dependencies =[
+	"textual>=6.7.1"
+]
+
+[project.scripts]
+pytaxi = "pytaxi.entrypoints.tui:tui"
+
+[dependency-groups]
+dev = [
+	{ include-group = "devtools" },
+	{ include-group = "lint" },
+]
+devtools = [
+	"textual-dev>=1.8.0",
+]
+lint = [
+	"ruff>=0.14.7"
+]
+
+[build-system]
+requires = ["uv_build>=0.9.14,<0.10.0"]
+build-backend = "uv_build"
